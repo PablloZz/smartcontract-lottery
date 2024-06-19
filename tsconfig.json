@@ -15,5 +15,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": { "~/*": ["src/*"] }
-  }
+  },
+  "include": ["./scripts", "./test", "./typechain-types"],
+  "files": ["./hardhat.config.ts"]
 }
