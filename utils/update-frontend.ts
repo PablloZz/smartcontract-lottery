@@ -16,7 +16,6 @@ async function updateFrontend(contractName: string, address: string) {
 
 async function updateAbi(contractName: string, address: string) {
   const raffle = await ethers.getContractAt(contractName, address);
-  console.log(raffle.interface.formatJson());
   fs.writeFileSync(FRONTEND_ABI_FILE_PATH, raffle.interface.formatJson());
 }
 
