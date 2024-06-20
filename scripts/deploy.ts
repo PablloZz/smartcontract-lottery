@@ -4,6 +4,7 @@ import RaffleModule from "../ignition/modules/Raffle";
 import { VRF_SUB_FUND_AMOUNT, developmentChains, networkConfig } from "../helper-hardhat.config";
 import { verify } from "../utils/verify";
 import { vars } from "hardhat/config";
+import { updateFrontend } from "../utils/update-frontend";
 
 async function main() {
   const { chainId } = network.config;
@@ -51,6 +52,8 @@ async function main() {
 
     await verify(raffleAddress, contractArguments);
   }
+
+  updateFrontend("Raffle", raffleAddress);
   console.log("------------------------------------");
 }
 

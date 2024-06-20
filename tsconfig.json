@@ -16,6 +16,6 @@
     "baseUrl": ".",
     "paths": { "~/*": ["src/*"] }
   },
-  "include": ["./scripts", "./test", "./typechain-types"],
+  "include": ["./scripts", "./test", "./typechain-types", "./utils"],
   "files": ["./hardhat.config.ts"]
 }
