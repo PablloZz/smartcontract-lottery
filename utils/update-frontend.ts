@@ -3,8 +3,8 @@ import { vars } from "hardhat/config";
 import fs from "node:fs";
 
 const FRONTEND_ADDRESSES_FILE_PATH =
-  "../hardhat-smartcontract-lottery-frontend/src/constants/contractAddress.json";
-const FRONTEND_ABI_FILE_PATH = "../hardhat-smartcontract-lottery-frontend/src/constants/abi.json";
+  "../smartcontract-lottery-frontend/src/constants/contractAddress.json";
+const FRONTEND_ABI_FILE_PATH = "../smartcontract-lottery-frontend/src/constants/abi.json";
 
 async function updateFrontend(contractName: string, address: string) {
   if (vars.get("UPDATE_FRONTEND")) {

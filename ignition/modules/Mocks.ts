@@ -8,7 +8,8 @@ const GAS_PRICE_LINK = 1000000000; // Link per gas. Calculated based on the gas 
 const WEI_PER_UNIT_LINK = 4300845385139956;
 
 export default buildModule("VRFCoordinatorV2_5MockModule", (m) => {
-  if (network.config.chainId !== 31337) return "" as unknown as IgnitionModuleResult<string>;
+  if (network.config.chainId !== 31337 && network.config.chainId !== 1337)
+    return "" as unknown as IgnitionModuleResult<string>;
 
   const baseFee = m.getParameter("baseFee", BASE_FEE);
   const gasPriceLink = m.getParameter("gasPriceLink", GAS_PRICE_LINK);

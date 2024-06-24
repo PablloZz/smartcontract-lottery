@@ -6,7 +6,7 @@ import { type Contract } from "ethers";
 import { type VRFCoordinatorV2_5Mock, type Raffle } from "../../typechain-types";
 import { assert, expect } from "chai";
 
-Number(network.config.chainId) !== 31337
+Number(network.config.chainId) !== 31337 || Number(network.config.chainId) !== 1337
   ? describe.skip
   : describe("Raffle Unit Tests", function () {
       const chainNetworkConfig = networkConfig[network.config.chainId!];

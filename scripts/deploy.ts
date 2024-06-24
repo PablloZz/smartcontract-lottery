@@ -13,11 +13,11 @@ async function main() {
   let subscriptionId: string = "";
   let vrfCoordinatorV2PlusMock;
 
-  if (Number(chainId) === 31337) {
+  if (Number(chainId) === 31337 || Number(chainId) === 1337) {
     vrfCoordinatorV2PlusMock = (await ignition.deploy(VrfCoordinatorV2PlusModule))
       .vrfCoordinatorV2PlusMock;
 
-    vrfCoordinatorV2PlusAddress = await vrfCoordinatorV2PlusMock.getAddress();
+      vrfCoordinatorV2PlusAddress = await vrfCoordinatorV2PlusMock.getAddress();
     const transactionResponse = await vrfCoordinatorV2PlusMock.createSubscription();
     const transactionReceipt = await transactionResponse.wait(1);
     subscriptionId = transactionReceipt.logs[0].args[0].toString();
@@ -35,7 +35,7 @@ async function main() {
 
   const raffleAddress = await raffle.getAddress();
 
-  if (Number(chainId) === 31337) {
+  if (Number(chainId) === 1337) {
     vrfCoordinatorV2PlusMock?.addConsumer(subscriptionId, raffleAddress);
   }
 

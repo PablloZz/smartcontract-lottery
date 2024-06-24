@@ -1,7 +1,8 @@
 {
   "license": "MIT",
   "scripts": {
-    "deploy:local": "hh run ./scripts/deploy.ts --network localhost && rm -rf ignition/deployments"
+    "deploy:local": "hh run ./scripts/deploy.ts --network localhost && rm -rf ignition/deployments",
+    "deploy:local-w": "yarn hardhat run ./scripts/deploy.ts --network localhost && Remove-Item -Force ignition/deployments"
   },
   "devDependencies": {
     "@chainlink/contracts": "^1.1.1",

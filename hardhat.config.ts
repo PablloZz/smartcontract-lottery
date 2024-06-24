@@ -14,10 +14,10 @@ const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {
-      chainId: 31337,
+      chainId: 1337,
     },
     localhost: {
-      chainId: 31337,
+      chainId: 1337,
     },
     sepolia: {
       chainId: 11155111,
