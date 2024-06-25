@@ -9,12 +9,12 @@ async function mockKeepers() {
     )) as Raffle;
 
     const checkData = ethers.keccak256(ethers.toUtf8Bytes(""));
-    const { upkeepNeeded } = await raffle.checkUpkeep.staticCall("0x");
+    const { upkeepNeeded } = await raffle.checkUpkeep.staticCall(checkData);
 
     if (upkeepNeeded) {
       const transactionResponse = await raffle.performUpkeep(checkData);
       const transactionReceipt = await transactionResponse.wait(1);
-      const requestId = (transactionReceipt?.logs as any)[1].requestId;
+      const requestId = (transactionReceipt?.logs as any)[1].args[0];
       console.log(`Performed upkeep with RequestId: ${requestId}`);
       await mockVrf(requestId, raffle);
     } else {

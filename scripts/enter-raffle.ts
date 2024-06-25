@@ -1,7 +1,7 @@
 import { ethers } from "hardhat";
 
 async function enterRaffle() {
-  const raffle = await ethers.getContractAt("Raffle", "0xa62fA7D5Ca193EC3B5896397C99Cf435E96Ea213");
+  const raffle = await ethers.getContractAt("Raffle", "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9");
   const entranceFee = await raffle.getEntranceFee();
   await raffle.enterRaffle({ value: entranceFee });
 }
